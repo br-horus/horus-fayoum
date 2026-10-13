@@ -1,0 +1,20 @@
+{
+  "name": "horus-fayoum-backend",
+  "version": "1.0.0",
+  "description": "HORUS Fayoum - باك اند محلي مجاني مفتوح المصدر (بديل Firebase) - نقل الفيوم الذكي",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "socket.io": "^4.7.5",
+    "better-sqlite3": "^11.0.0",
+    "jsonwebtoken": "^9.0.2",
+    "bcryptjs": "^2.4.3",
+    "multer": "^2.0.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5"
+  }
+}
