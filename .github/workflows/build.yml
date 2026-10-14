@@ -29,16 +29,14 @@ jobs:
         run: |
           echo "$ANDROID_KEYSTORE_BASE64" | base64 -d > android/app/horus-upload.jks
           python3 - <<'EOF'
+          import re
           p = 'android/app/build.gradle.kts'
           s = open(p).read()
-          old = '''    buildTypes {
-              release {
-                  // TODO: Add your own signing config for the release build.
-                  // Signing with the debug keys for now, so `flutter run --release` works.
-                  signingConfig = signingConfigs.getByName("debug")
-              }
-          }'''
-          new = '''    signingConfigs {
+          assert 'signingConfigs.getByName("debug")' in s, 'debug signing line not found'
+          s = s.replace('signingConfig = signingConfigs.getByName("debug")', 'signingConfig = signingConfigs.getByName("release")')
+          assert 'signingConfigs.getByName("release")' in s
+          if 'create("release")' not in s:
+              block = '''    signingConfigs {
               create("release") {
                   storeFile = file("horus-upload.jks")
                   storePassword = System.getenv("STORE_PASSWORD")
@@ -46,14 +44,11 @@ jobs:
                   keyPassword = System.getenv("KEY_PASSWORD")
               }
           }
-          buildTypes {
-              release {
-                  signingConfig = signingConfigs.getByName("release")
-              }
-          }'''
-          assert old in s, 'release block not found'
-          open(p, 'w').write(s.replace(old, new))
-          print('signing patched')
+          '''
+              s = s.replace('    buildTypes {', block + '    buildTypes {', 1)
+          open(p, 'w').write(s)
+          print('signing patched OK')
+          print(open(p).read()[:1500])
           EOF
         env:
           ANDROID_KEYSTORE_BASE64: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
@@ -94,16 +89,14 @@ jobs:
         run: |
           echo "$ANDROID_KEYSTORE_BASE64" | base64 -d > android/app/horus-upload.jks
           python3 - <<'EOF'
+          import re
           p = 'android/app/build.gradle.kts'
           s = open(p).read()
-          old = '''    buildTypes {
-              release {
-                  // TODO: Add your own signing config for the release build.
-                  // Signing with the debug keys for now, so `flutter run --release` works.
-                  signingConfig = signingConfigs.getByName("debug")
-              }
-          }'''
-          new = '''    signingConfigs {
+          assert 'signingConfigs.getByName("debug")' in s, 'debug signing line not found'
+          s = s.replace('signingConfig = signingConfigs.getByName("debug")', 'signingConfig = signingConfigs.getByName("release")')
+          assert 'signingConfigs.getByName("release")' in s
+          if 'create("release")' not in s:
+              block = '''    signingConfigs {
               create("release") {
                   storeFile = file("horus-upload.jks")
                   storePassword = System.getenv("STORE_PASSWORD")
@@ -111,14 +104,11 @@ jobs:
                   keyPassword = System.getenv("KEY_PASSWORD")
               }
           }
-          buildTypes {
-              release {
-                  signingConfig = signingConfigs.getByName("release")
-              }
-          }'''
-          assert old in s, 'release block not found'
-          open(p, 'w').write(s.replace(old, new))
-          print('signing patched')
+          '''
+              s = s.replace('    buildTypes {', block + '    buildTypes {', 1)
+          open(p, 'w').write(s)
+          print('signing patched OK')
+          print(open(p).read()[:1500])
           EOF
         env:
           ANDROID_KEYSTORE_BASE64: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
