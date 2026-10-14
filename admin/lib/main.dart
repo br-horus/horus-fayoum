@@ -77,7 +77,7 @@ class _LoginState extends State<Login> {
     setState(() => busy = true);
     try {
       final p = await SharedPreferences.getInstance();
-      var b = p.getString('horus_server') ?? 'http://192.168.1.100:3100';
+      var b = p.getString('horus_server') ?? 'https://horus-api-31-97-177-241.sslip.io';
       if (server.text.trim().isNotEmpty) {
         b = server.text.trim();
         await p.setString('horus_server', b);
@@ -124,7 +124,7 @@ class _LoginState extends State<Login> {
             const SizedBox(height: 10),
             TextField(controller: pass, obscureText: true, decoration: const InputDecoration(labelText: 'كلمة السر', border: OutlineInputBorder())),
             const SizedBox(height: 10),
-            TextField(controller: server, decoration: const InputDecoration(labelText: 'عنوان السيرفر', hintText: 'http://192.168.1.100:3100', border: OutlineInputBorder())),
+            TextField(controller: server, decoration: const InputDecoration(labelText: 'عنوان السيرفر', hintText: 'https://horus-api-31-97-177-241.sslip.io', border: OutlineInputBorder())),
             const SizedBox(height: 6),
             const Text('الافتراضي للتجربة: admin / admin',
                 style: TextStyle(color: Colors.black45, fontSize: 12)),

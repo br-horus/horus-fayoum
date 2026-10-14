@@ -22,7 +22,7 @@ void main() async {
 class Api {
   static Future<String> base() async =>
       (await SharedPreferences.getInstance()).getString('horus_server') ??
-      'http://192.168.1.100:3100';
+      'https://horus-api-31-97-177-241.sslip.io';
   static Future<Map<String, String>> h() async => {
         'Content-Type': 'application/json',
         'Authorization':
@@ -107,7 +107,7 @@ class _PhoneState extends State<Phone> {
   Future<void> _send() async {
     setState(() => busy = true);
     try {
-      var b = 'http://192.168.1.100:3100';
+      var b = 'https://horus-api-31-97-177-241.sslip.io';
       if (server.text.trim().isNotEmpty) {
         b = server.text.trim();
         (await SharedPreferences.getInstance()).setString('horus_server', b);
@@ -160,7 +160,7 @@ class _PhoneState extends State<Phone> {
           Expanded(child: TextField(controller: carNumber, decoration: const InputDecoration(labelText: 'رقم العربية', border: OutlineInputBorder()))),
         ]),
         const SizedBox(height: 10),
-        TextField(controller: server, decoration: const InputDecoration(labelText: 'عنوان السيرفر (اختياري)', hintText: 'http://192.168.1.100:3100', border: OutlineInputBorder())),
+        TextField(controller: server, decoration: const InputDecoration(labelText: 'عنوان السيرفر (اختياري)', hintText: 'https://horus-api-31-97-177-241.sslip.io', border: OutlineInputBorder())),
         const SizedBox(height: 14),
         SizedBox(
           height: 54,

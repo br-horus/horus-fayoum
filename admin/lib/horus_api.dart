@@ -6,7 +6,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 class HorusAdminApi {
   static Future<String> base() async =>
       (await SharedPreferences.getInstance()).getString('horus_server') ??
-      'http://192.168.1.100:3100';
+      'https://horus-api-31-97-177-241.sslip.io';
   static Future<String?> token() async =>
       (await SharedPreferences.getInstance()).getString('horus_admin_token');
   static Future<Map<String, String>> h() async => {

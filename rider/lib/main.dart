@@ -23,7 +23,7 @@ void main() async {
 class HorusApi {
   static Future<String> base() async {
     final p = await SharedPreferences.getInstance();
-    return p.getString('horus_server') ?? 'http://192.168.1.100:3100';
+    return p.getString('horus_server') ?? 'https://horus-api-31-97-177-241.sslip.io';
   }
   static Future<String?> token() async =>
       (await SharedPreferences.getInstance()).getString('horus_token');
@@ -179,7 +179,7 @@ class _PhoneState extends State<Phone> {
             controller: server,
             decoration: const InputDecoration(
                 labelText: 'عنوان السيرفر (اختياري)',
-                hintText: 'http://192.168.1.100:3100',
+                hintText: 'https://horus-api-31-97-177-241.sslip.io',
                 border: OutlineInputBorder())),
         const SizedBox(height: 16),
         SizedBox(
@@ -809,7 +809,7 @@ class Me extends StatelessWidget {
                 leading: const Icon(Icons.dns),
                 title: const Text('عنوان السيرفر'),
                 subtitle: Text(p?.getString('horus_server') ??
-                    'http://192.168.1.100:3100')),
+                    'https://horus-api-31-97-177-241.sslip.io')),
             const Divider(),
             ListTile(
               leading: const Icon(Icons.logout, color: Colors.red),
