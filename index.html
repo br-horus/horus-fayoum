@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>حورس | نقل الفيوم الذكي 𓂀</title>
+<meta name="description" content="تطبيق نقل ذكي مجاني للفيوم - راكب وكابتن وإدارة - كاش بدون فيزات - مفتوح المصدر">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Tahoma,Arial,sans-serif}
+body{background:#0B1F3A;color:#fff;overflow-x:hidden}
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:40px 20px;background:radial-gradient(ellipse at 50% 0%,#123B70 0%,#0B1F3A 60%)}
+.eye{font-size:90px;animation:float 3s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+h1{font-size:3.2rem;margin:10px 0;color:#FFC107}
+.sub{font-size:1.3rem;color:#cfe0ff;margin-bottom:8px}
+.badge{display:inline-block;background:#16294d;border:1px solid #2c4d86;padding:8px 18px;border-radius:30px;margin:6px;font-size:.95rem}
+.btns{margin-top:28px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.btn{padding:16px 30px;border-radius:14px;font-size:1.1rem;font-weight:800;text-decoration:none;transition:.2s;display:inline-flex;align-items:center;gap:10px;border:none;cursor:pointer}
+.btn-gold{background:#FFC107;color:#0B1F3A}
+.btn-out{background:transparent;color:#FFC107;border:2px solid #FFC107}
+.btn:hover{transform:scale(1.05)}
+section{padding:60px 20px;max-width:1000px;margin:auto}
+h2{color:#FFC107;font-size:2rem;margin-bottom:20px;text-align:center}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
+.card{background:#12294f;border:1px solid #24467e;border-radius:16px;padding:24px;text-align:center}
+.card .i{font-size:2.6rem}
+.card h3{margin:8px 0}
+.card a{display:inline-block;margin-top:12px;color:#FFC107;font-weight:bold;text-decoration:none;border:1px solid #FFC107;padding:8px 18px;border-radius:10px}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;text-align:center}
+.step{background:#12294f;border-radius:16px;padding:22px;border-top:3px solid #FFC107}
+.fares{background:#12294f;border-radius:18px;padding:28px}
+.fares table{width:100%;border-collapse:collapse;margin-top:14px}
+.fares td,.fares th{padding:12px;border-bottom:1px solid #24467e;text-align:center}
+footer{text-align:center;padding:30px;color:#8aa0c6;font-size:.9rem}
+.note{background:#3a2b00;border:1px solid #FFC107;color:#FFD75e;border-radius:12px;padding:14px;margin:20px auto;max-width:760px;text-align:center;line-height:1.7}
+</style>
+</head>
+<body>
+<div class="hero">
+<div>
+<div class="eye">𓂀</div>
+<h1>حورس</h1>
+<div class="sub">نقل الفيوم الذكي — كاش • سهل • بدون تعقيد</div>
+<div>
+<span class="badge">📍 الفيوم • سنورس • إطسا • طامية • أبشواي</span>
+<span class="badge">💵 كاش فقط — بدون فيزات</span>
+<span class="badge">🆓 مجاني ومفتوح المصدر</span>
+</div>
+<div class="btns">
+<a class="btn btn-gold" href="./rider/">🚕 افتح تطبيق الراكب (ويب)</a>
+<a class="btn btn-out" href="./driver/">🧑‍✈️ افتح تطبيق الكابتن (ويب)</a>
+<a class="btn btn-out" href="./admin/">🖥️ لوحة التحكم</a>
+</div>
+<div class="note">
+📱 <b>تحميل APK:</b> النسخ الحية تعمل الآن في المتصفح مباشرة من الأزرار فوق.<br>
+ملفات APK للأندرويد تُبنى تلقائياً على GitHub Actions — اطلبها من
+<a href="https://github.com/br-horus/horus-fayoum/actions" style="color:#FFC107">صفحة البناء</a>
+أو من صفحة <a href="https://github.com/br-horus/horus-fayoum/releases" style="color:#FFC107">الإصدارات</a>.
+</div>
+</div>
+</div>
+
+<section>
+<h2>الأنظمة الثلاثة — كل حاجة جاهزة</h2>
+<div class="cards">
+<div class="card"><div class="i">🚕</div><h3>تطبيق الراكب</h3><p>خريطة الفيوم، عرض سعرك (مزايدة)، وتتبع الكابتن لحظياً.</p><a href="./rider/">افتح</a></div>
+<div class="card"><div class="i">🧑‍✈️</div><h3>تطبيق الكابتن</h3><p>أونلاين/أوفلاين، استقبال الطلبات، قبول، أرباح.</p><a href="./driver/">افتح</a></div>
+<div class="card"><div class="i">🖥️</div><h3>لوحة التحكم</h3><p>إحصائيات، إدارة الكباتن، توثيق، حظر.</p><a href="./admin/">افتح</a></div>
+<div class="card"><div class="i">🛠️</div><h3>الباك اند المحلي</h3><p>بديل Firebase مجاني: SQLite + Socket لحظي + رفع ملفات.</p><a href="https://github.com/br-horus/horus-fayoum/tree/main/backend">الكود</a></div>
+</div>
+</section>
+
+<section>
+<h2>ليه حورس؟</h2>
+<div class="cards">
+<div class="card"><div class="i">💰</div><h3>كاش وبس</h3><p>ادفع للكابتن في إيدك. بدون فيزا.</p></div>
+<div class="card"><div class="i">🗣️</div><h3>سهل للجميع</h3><p>واجهة عربية واضحة وخط كبير.</p></div>
+<div class="card"><div class="i">🤝</div><h3>فاصل السعر</h3><p>اعرض سعرك والكباتن القريبين يقبلوا.</p></div>
+<div class="card"><div class="i">🛡️</div><h3>كباتن موثقة</h3><p>توثيق من الإدارة قبل التشغيل.</p></div>
+</div>
+</section>
+
+<section>
+<h2>ازاي تبدأ؟</h2>
+<div class="steps">
+<div class="step"><h3>1️⃣ افتح التطبيق</h3><p>من المتصفح أو APK</p></div>
+<div class="step"><h3>2️⃣ سجّل برقمك</h3><p>كود تأكيد فوري</p></div>
+<div class="step"><h3>3️⃣ حدد مكانك ووجهتك</h3><p>على خريطة الفيوم</p></div>
+<div class="step"><h3>4️⃣ الكابتن يوصلك</h3><p>وادفع كاش 💵</p></div>
+</div>
+</section>
+
+<section>
+<h2>أسعار استرشادية (الفيوم)</h2>
+<div class="fares">
+<table>
+<tr><th>المشوار</th><th>السعر التقريبي</th></tr>
+<tr><td>داخل مدينة الفيوم</td><td>20 – 35 جنيه</td></tr>
+<tr><td>الفيوم ↔ سنورس</td><td>40 – 60 جنيه</td></tr>
+<tr><td>الفيوم ↔ إطسا / طامية</td><td>50 – 80 جنيه</td></tr>
+<tr><td>فتح العداد + الكيلو</td><td>15 فتح + 5/كم</td></tr>
+</table>
+<p style="margin-top:10px;color:#8aa0c6">السعر النهائي بالاتفاق مع الكابتن.</p>
+</div>
+</section>
+
+<footer>𓂀 حورس — نقل الفيوم الذكي • مجاني ومفتوح المصدر • البايلوت 2026</footer>
+</body>
+</html>
