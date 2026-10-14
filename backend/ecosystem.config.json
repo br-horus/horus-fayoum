@@ -1,0 +1,15 @@
+{
+  "apps": [
+    {
+      "name": "horus-backend",
+      "script": "src/index.js",
+      "cwd": ".",
+      "env": {
+        "PORT": "3100",
+        "NODE_ENV": "production"
+      },
+      "autorestart": true,
+      "max_memory_restart": "300M"
+    }
+  ]
+}

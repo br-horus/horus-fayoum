@@ -9,9 +9,6 @@ jobs:
   build-rider:
     name: 📱 Rider APK
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: rider
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-java@v4
@@ -21,8 +18,17 @@ jobs:
       - uses: subosito/flutter-action@v2
         with:
           channel: stable
-      - run: flutter pub get
-      - run: flutter build apk --release --target-platform android-arm64
+      - name: Regenerate android platform (match CI Flutter)
+        working-directory: rider
+        run: flutter create --platforms android --org com.horus.fayoum --project-name horus_rider .
+      - name: Set Arabic app label
+        working-directory: rider
+        run: sed -i 's/android:label="horus_rider"/android:label="حورس | نقل الفيوم"/' android/app/src/main/AndroidManifest.xml
+      - name: Build APK
+        working-directory: rider
+        run: |
+          flutter pub get
+          flutter build apk --release --target-platform android-arm64
       - uses: actions/upload-artifact@v4
         with:
           name: horus-rider-apk
@@ -31,9 +37,6 @@ jobs:
   build-driver:
     name: 🧑‍✈️ Driver APK
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: driver
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-java@v4
@@ -43,8 +46,17 @@ jobs:
       - uses: subosito/flutter-action@v2
         with:
           channel: stable
-      - run: flutter pub get
-      - run: flutter build apk --release --target-platform android-arm64
+      - name: Regenerate android platform (match CI Flutter)
+        working-directory: driver
+        run: flutter create --platforms android --org com.horus.fayoum --project-name horus_driver .
+      - name: Set Arabic app label
+        working-directory: driver
+        run: sed -i 's/android:label="horus_driver"/android:label="حورس كابتن | الفيوم"/' android/app/src/main/AndroidManifest.xml
+      - name: Build APK
+        working-directory: driver
+        run: |
+          flutter pub get
+          flutter build apk --release --target-platform android-arm64
       - uses: actions/upload-artifact@v4
         with:
           name: horus-driver-apk
