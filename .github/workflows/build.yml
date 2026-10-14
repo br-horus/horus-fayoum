@@ -27,15 +27,42 @@ jobs:
       - name: Setup release signing
         working-directory: rider
         run: |
-          echo "$ANDROID_KEYSTORE_BASE64" | base64 -d > android/horus-upload.jks
-          printf 'storePassword=%s\nkeyPassword=%s\nkeyAlias=%s\nstoreFile=horus-upload.jks\n' "$STORE_PASSWORD" "$KEY_PASSWORD" "$KEY_ALIAS" > android/key.properties
+          echo "$ANDROID_KEYSTORE_BASE64" | base64 -d > android/app/horus-upload.jks
+          python3 - <<'EOF'
+          p = 'android/app/build.gradle.kts'
+          s = open(p).read()
+          old = '''    buildTypes {
+              release {
+                  // TODO: Add your own signing config for the release build.
+                  // Signing with the debug keys for now, so `flutter run --release` works.
+                  signingConfig = signingConfigs.getByName("debug")
+              }
+          }'''
+          new = '''    signingConfigs {
+              create("release") {
+                  storeFile = file("horus-upload.jks")
+                  storePassword = System.getenv("STORE_PASSWORD")
+                  keyAlias = System.getenv("KEY_ALIAS")
+                  keyPassword = System.getenv("KEY_PASSWORD")
+              }
+          }
+          buildTypes {
+              release {
+                  signingConfig = signingConfigs.getByName("release")
+              }
+          }'''
+          assert old in s, 'release block not found'
+          open(p, 'w').write(s.replace(old, new))
+          print('signing patched')
+          EOF
         env:
           ANDROID_KEYSTORE_BASE64: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
+      - name: Build universal APK (all ABIs, release-signed)
+        working-directory: rider
+        env:
           KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
           KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
           STORE_PASSWORD: ${{ secrets.STORE_PASSWORD }}
-      - name: Build universal APK (all ABIs, release-signed)
-        working-directory: rider
         run: |
           flutter pub get
           flutter build apk --release
@@ -65,15 +92,42 @@ jobs:
       - name: Setup release signing
         working-directory: driver
         run: |
-          echo "$ANDROID_KEYSTORE_BASE64" | base64 -d > android/horus-upload.jks
-          printf 'storePassword=%s\nkeyPassword=%s\nkeyAlias=%s\nstoreFile=horus-upload.jks\n' "$STORE_PASSWORD" "$KEY_PASSWORD" "$KEY_ALIAS" > android/key.properties
+          echo "$ANDROID_KEYSTORE_BASE64" | base64 -d > android/app/horus-upload.jks
+          python3 - <<'EOF'
+          p = 'android/app/build.gradle.kts'
+          s = open(p).read()
+          old = '''    buildTypes {
+              release {
+                  // TODO: Add your own signing config for the release build.
+                  // Signing with the debug keys for now, so `flutter run --release` works.
+                  signingConfig = signingConfigs.getByName("debug")
+              }
+          }'''
+          new = '''    signingConfigs {
+              create("release") {
+                  storeFile = file("horus-upload.jks")
+                  storePassword = System.getenv("STORE_PASSWORD")
+                  keyAlias = System.getenv("KEY_ALIAS")
+                  keyPassword = System.getenv("KEY_PASSWORD")
+              }
+          }
+          buildTypes {
+              release {
+                  signingConfig = signingConfigs.getByName("release")
+              }
+          }'''
+          assert old in s, 'release block not found'
+          open(p, 'w').write(s.replace(old, new))
+          print('signing patched')
+          EOF
         env:
           ANDROID_KEYSTORE_BASE64: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
+      - name: Build universal APK (all ABIs, release-signed)
+        working-directory: driver
+        env:
           KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
           KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
           STORE_PASSWORD: ${{ secrets.STORE_PASSWORD }}
-      - name: Build universal APK (all ABIs, release-signed)
-        working-directory: driver
         run: |
           flutter pub get
           flutter build apk --release
