@@ -24876,7 +24876,7 @@ while(true)switch(s){case 0:o=A
 s=3
 return A.I(A.l4(),$async$lK)
 case 3:p=o.cd(b.a.h(0,"horus_server"))
-q=p==null?"http://192.168.1.100:3100":p
+q=p==null?"https://horus-api-31-97-177-241.sslip.io":p
 s=1
 break
 case 1:return A.L(q,r)}})
@@ -84574,7 +84574,7 @@ var $async$pQ=A.O(function(a,b){if(a===1){p.push(b)
 s=q}while(true)switch(s){case 0:o.ah(new A.ao7(o))
 q=3
 k={}
-k.a="http://192.168.1.100:3100"
+k.a="https://horus-api-31-97-177-241.sslip.io"
 j=B.c.hz(o.f.a.a)
 s=j.length!==0?6:8
 break
@@ -84588,7 +84588,7 @@ case 8:s=10
 return A.I(A.l4(),$async$pQ)
 case 10:n=b
 i=A.cd(n.a.h(0,"horus_server"))
-j=k.a=i==null?"http://192.168.1.100:3100":i
+j=k.a=i==null?"https://horus-api-31-97-177-241.sslip.io":i
 case 7:j=A.dN(j+"/api/otp/send")
 h=t.N
 g=A.aj(["Content-Type","application/json"],h,h)
@@ -91377,7 +91377,7 @@ B.G1=new A.ik(null,null,null,null,null,null,null,null,null,null,null,null,null,n
 B.G2=new A.ik(null,null,null,"\u0631\u0642\u0645 \u0627\u0644\u0639\u0631\u0628\u064a\u0629",null,null,null,null,null,null,null,null,null,null,null,null,!0,!0,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,B.dC,!0,null,null,null,null)
 B.G3=new A.ik(null,null,null,"\u0631\u0642\u0645 \u0627\u0644\u0645\u0648\u0628\u0627\u064a\u0644",null,null,null,null,null,null,null,null,null,null,null,null,!0,!0,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,B.dC,!0,null,null,null,null)
 B.G4=new A.ik(null,null,null,"\u0646\u0648\u0639 \u0627\u0644\u0639\u0631\u0628\u064a\u0629",null,null,null,null,null,null,null,null,null,null,null,null,!0,!0,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,B.dC,!0,null,null,null,null)
-B.G5=new A.ik(null,null,null,"\u0639\u0646\u0648\u0627\u0646 \u0627\u0644\u0633\u064a\u0631\u0641\u0631 (\u0627\u062e\u062a\u064a\u0627\u0631\u064a)",null,null,null,null,null,null,"http://192.168.1.100:3100",null,null,null,null,null,!0,!0,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,B.dC,!0,null,null,null,null)
+B.G5=new A.ik(null,null,null,"\u0639\u0646\u0648\u0627\u0646 \u0627\u0644\u0633\u064a\u0631\u0641\u0631 (\u0627\u062e\u062a\u064a\u0627\u0631\u064a)",null,null,null,null,null,null,"https://horus-api-31-97-177-241.sslip.io",null,null,null,null,null,!0,!0,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,B.dC,!0,null,null,null,null)
 B.G6=new A.ik(null,null,null,"\u0627\u0633\u0645\u0643",null,null,null,null,null,null,null,null,null,null,null,null,!0,!0,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,B.dC,!0,null,null,null,null)
 B.Yw=new A.ik(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,!0,!0,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,!0,null,null,null,null)
 B.o2=new A.ew(0.5,1,B.bs)

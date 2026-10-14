@@ -24868,7 +24868,7 @@ while(true)switch(s){case 0:o=A
 s=3
 return A.O(A.zF(),$async$nP)
 case 3:p=o.c5(b.a.h(0,"horus_server"))
-q=p==null?"http://192.168.1.100:3100":p
+q=p==null?"https://horus-api-31-97-177-241.sslip.io":p
 s=1
 break
 case 1:return A.K(q,r)}})
@@ -79576,7 +79576,7 @@ s=6
 return A.O(A.zF(),$async$mE)
 case 6:n=b
 k=A.c5(n.a.h(0,"horus_server"))
-m=k==null?"http://192.168.1.100:3100":k
+m=k==null?"https://horus-api-31-97-177-241.sslip.io":k
 j=B.c.k6(o.f.a.a)
 s=j.length!==0?7:8
 break
@@ -83597,7 +83597,7 @@ B.Ee=new A.jI("\ufffc",null,null,null,!0,!0,B.ai)
 B.Ef=new A.xi(null,null,null,null,null,null,null,null,null,B.mV,B.lx,!1,null,!1,null,null,null,null,null,null,null,null,!1,null,null,null,null,null,null,null,null,null,null,null,!1,null,null)
 B.ll=new A.b8(B.l,1,B.x,-1)
 B.jY=new A.hf(4,B.dE,B.ll)
-B.Eg=new A.ld(null,null,null,"\u0639\u0646\u0648\u0627\u0646 \u0627\u0644\u0633\u064a\u0631\u0641\u0631",null,null,null,null,null,null,"http://192.168.1.100:3100",null,null,null,null,null,!0,!0,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,B.jY,!0,null,null,null,null)
+B.Eg=new A.ld(null,null,null,"\u0639\u0646\u0648\u0627\u0646 \u0627\u0644\u0633\u064a\u0631\u0641\u0631",null,null,null,null,null,null,"https://horus-api-31-97-177-241.sslip.io",null,null,null,null,null,!0,!0,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,B.jY,!0,null,null,null,null)
 B.Eh=new A.ld(null,null,null,"\u0643\u0644\u0645\u0629 \u0627\u0644\u0633\u0631",null,null,null,null,null,null,null,null,null,null,null,null,!0,!0,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,B.jY,!0,null,null,null,null)
 B.VH=new A.ld(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,!0,!0,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,!0,null,null,null,null)
 B.Ei=new A.ld(null,null,null,"\u0627\u0644\u0645\u0633\u062a\u062e\u062f\u0645",null,null,null,null,null,null,null,null,null,null,null,null,!0,!0,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,B.jY,!0,null,null,null,null)

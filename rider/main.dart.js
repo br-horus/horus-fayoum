@@ -24816,7 +24816,7 @@ while(true)switch(s){case 0:o=A
 s=3
 return A.J(A.q6(),$async$ma)
 case 3:p=o.cf(b.a.h(0,"horus_server"))
-q=p==null?"http://192.168.1.100:3100":p
+q=p==null?"https://horus-api-31-97-177-241.sslip.io":p
 s=1
 break
 case 1:return A.L(q,r)}})
@@ -84082,7 +84082,7 @@ A.a8S.prototype={
 $2(a,b){var s=null,r=b.b,q=r==null,p=q?s:A.cf(r.a.h(0,"horus_name"))
 p=A.k6(A.cJ(p==null?"\u0631\u0627\u0643\u0628 \u062d\u0648\u0631\u0633":p,s,s,s,B.zy,s,s),s,s)
 q=q?s:A.cf(r.a.h(0,"horus_server"))
-return A.auS(A.c([B.Ch,B.cS,p,B.z8,A.zg(s,B.Fu,s,A.cJ(q==null?"http://192.168.1.100:3100":q,s,s,s,s,s,s),B.Vm),B.E2,A.zg(s,B.Fn,new A.a8R(r,this.a),s,B.Vp),B.z8,B.Cg],t.D),B.es,!1)},
+return A.auS(A.c([B.Ch,B.cS,p,B.z8,A.zg(s,B.Fu,s,A.cJ(q==null?"https://horus-api-31-97-177-241.sslip.io":q,s,s,s,s,s,s),B.Vm),B.E2,A.zg(s,B.Fn,new A.a8R(r,this.a),s,B.Vp),B.z8,B.Cg],t.D),B.es,!1)},
 $S:546}
 A.a8R.prototype={
 $0(){var s=0,r=A.N(t.H),q=this,p
@@ -90431,7 +90431,7 @@ B.FR=new A.kv("\ufffc",null,null,null,!0,!0,B.av)
 B.FS=new A.yU(null,null,null,null,null,null,null,null,null,B.nz,B.m8,!1,null,!1,null,null,null,null,null,null,null,null,!1,null,null,null,null,null,null,null,null,null,null,null,!1,null,null)
 B.hB=new A.fI(4,B.e2,B.fn)
 B.FT=new A.kw(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,!0,!0,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,B.hB,!0,null,null,null,null)
-B.FU=new A.kw(null,null,null,"\u0639\u0646\u0648\u0627\u0646 \u0627\u0644\u0633\u064a\u0631\u0641\u0631 (\u0627\u062e\u062a\u064a\u0627\u0631\u064a)",null,null,null,null,null,null,"http://192.168.1.100:3100",null,null,null,null,null,!0,!0,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,B.hB,!0,null,null,null,null)
+B.FU=new A.kw(null,null,null,"\u0639\u0646\u0648\u0627\u0646 \u0627\u0644\u0633\u064a\u0631\u0641\u0631 (\u0627\u062e\u062a\u064a\u0627\u0631\u064a)",null,null,null,null,null,null,"https://horus-api-31-97-177-241.sslip.io",null,null,null,null,null,!0,!0,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,B.hB,!0,null,null,null,null)
 B.FV=new A.kw(null,null,null,"\u0631\u0642\u0645 \u0627\u0644\u0645\u0648\u0628\u0627\u064a\u0644 (01...)",null,null,null,null,null,null,null,null,null,null,null,null,!0,!0,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,B.hB,!0,null,null,null,null)
 B.YB=new A.kw(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,!0,!0,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,!0,null,null,null,null)
 B.FW=new A.kw(null,null,null,"\u0627\u0633\u0645\u0643 \u0627\u0644\u0643\u0631\u064a\u0645",null,null,null,null,null,null,null,null,null,null,null,null,!0,!0,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,B.hB,!0,null,null,null,null)
