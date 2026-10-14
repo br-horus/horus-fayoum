@@ -52,6 +52,13 @@ jobs:
           EOF
         env:
           ANDROID_KEYSTORE_BASE64: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
+      - name: Verify keystore (diagnostic)
+        working-directory: rider
+        run: |
+          keytool -list -keystore android/app/horus-upload.jks -storepass "$STORE_PASSWORD" -alias "$KEY_ALIAS"
+        env:
+          KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
+          STORE_PASSWORD: ${{ secrets.STORE_PASSWORD }}
       - name: Build universal APK (all ABIs, release-signed)
         working-directory: rider
         env:
@@ -112,6 +119,13 @@ jobs:
           EOF
         env:
           ANDROID_KEYSTORE_BASE64: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
+      - name: Verify keystore (diagnostic)
+        working-directory: driver
+        run: |
+          keytool -list -keystore android/app/horus-upload.jks -storepass "$STORE_PASSWORD" -alias "$KEY_ALIAS"
+        env:
+          KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
+          STORE_PASSWORD: ${{ secrets.STORE_PASSWORD }}
       - name: Build universal APK (all ABIs, release-signed)
         working-directory: driver
         env:
