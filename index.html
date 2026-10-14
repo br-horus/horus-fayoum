@@ -3,96 +3,180 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>حورس | نقل الفيوم الذكي 𓂀</title>
-<meta name="description" content="تطبيق نقل ذكي مجاني للفيوم - راكب وكابتن وإدارة - كاش بدون فيزات - مفتوح المصدر">
+<title>حورس | توصيلة الفيوم الذكية 𓂀</title>
+<meta name="description" content="حورس — تطبيق التوصيل الذكي لمحافظة الفيوم. اطلب مشوارك أو اشتغل كابتن. كاش، سهل، وبالعربي.">
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Tahoma,Arial,sans-serif}
-body{background:#0B1F3A;color:#fff;overflow-x:hidden}
-.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:40px 20px;background:radial-gradient(ellipse at 50% 0%,#123B70 0%,#0B1F3A 60%)}
-.eye{font-size:90px;animation:float 3s ease-in-out infinite}
-@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
-h1{font-size:3.2rem;margin:10px 0;color:#FFC107}
-.sub{font-size:1.3rem;color:#cfe0ff;margin-bottom:8px}
-.badge{display:inline-block;background:#16294d;border:1px solid #2c4d86;padding:8px 18px;border-radius:30px;margin:6px;font-size:.95rem}
-.btns{margin-top:28px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
-.btn{padding:16px 30px;border-radius:14px;font-size:1.1rem;font-weight:800;text-decoration:none;transition:.2s;display:inline-flex;align-items:center;gap:10px}
-.btn-gold{background:#FFC107;color:#0B1F3A}
-.btn-out{background:transparent;color:#FFC107;border:2px solid #FFC107}
-.btn:hover{transform:scale(1.05)}
-section{padding:60px 20px;max-width:1000px;margin:auto}
-h2{color:#FFC107;font-size:2rem;margin-bottom:20px;text-align:center}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
-.card{background:#12294f;border:1px solid #24467e;border-radius:16px;padding:24px;text-align:center}
-.card .i{font-size:2.6rem}
-.card h3{margin:8px 0}
-.card a{display:inline-block;margin-top:12px;color:#FFC107;font-weight:bold;text-decoration:none;border:1px solid #FFC107;padding:8px 18px;border-radius:10px}
-.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;text-align:center}
-.step{background:#12294f;border-radius:16px;padding:22px;border-top:3px solid #FFC107}
-.fares{background:#12294f;border-radius:18px;padding:28px}
-.fares table{width:100%;border-collapse:collapse;margin-top:14px}
-.fares td,.fares th{padding:12px;border-bottom:1px solid #24467e;text-align:center}
-footer{text-align:center;padding:30px;color:#8aa0c6;font-size:.9rem}
-.note{background:#0d3a1a;border:1px solid #35d07f;color:#a9f0c9;border-radius:12px;padding:14px;margin:20px auto;max-width:760px;text-align:center;line-height:1.8}
+:root{
+  --navy:#0B1F3A; --navy2:#123B70; --gold:#FFC107; --gold2:#FFD75E;
+  --ink:#10233f; --muted:#5b6b84; --bg:#f4f6fb; --card:#ffffff; --ok:#1faa63;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:"Segoe UI",Tahoma,"Cairo",Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.8}
+a{text-decoration:none}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+/* NAV */
+nav{position:sticky;top:0;z-index:50;background:rgba(11,31,58,.96);backdrop-filter:blur(8px);border-bottom:1px solid #22385c}
+.nav-in{display:flex;align-items:center;justify-content:space-between;padding:12px 20px;max-width:1120px;margin:0 auto}
+.brand{display:flex;align-items:center;gap:10px;color:#fff;font-weight:900;font-size:1.35rem}
+.brand .eye{font-size:1.8rem}
+.nav-links{display:flex;gap:18px}
+.nav-links a{color:#cfe0ff;font-size:.95rem}
+.nav-links a:hover{color:var(--gold)}
+.nav-cta{background:var(--gold);color:var(--navy)!important;font-weight:800;padding:8px 20px;border-radius:12px}
+/* HERO */
+.hero{background:radial-gradient(1000px 500px at 50% -10%,#1a4a8f 0%,var(--navy) 55%);color:#fff;overflow:hidden}
+.hero-in{display:grid;grid-template-columns:1.15fr .85fr;gap:30px;align-items:center;padding:64px 20px 70px;max-width:1120px;margin:0 auto}
+.kicker{display:inline-block;background:rgba(255,193,7,.14);border:1px solid rgba(255,193,7,.5);color:var(--gold2);padding:6px 16px;border-radius:999px;font-size:.85rem;margin-bottom:14px}
+.hero h1{font-size:2.7rem;line-height:1.35;margin-bottom:10px}
+.hero h1 .gold{color:var(--gold)}
+.hero p.lead{color:#c9d8f2;font-size:1.12rem;margin-bottom:22px}
+.dl-row{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 26px;border-radius:14px;font-weight:800;font-size:1.02rem;transition:.18s;border:2px solid transparent;cursor:pointer}
+.btn-gold{background:var(--gold);color:var(--navy)}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(255,193,7,.35)}
+.btn-line{background:transparent;color:#fff;border-color:#4a648f}
+.btn-line:hover{border-color:var(--gold);color:var(--gold)}
+.btn small{font-weight:400;font-size:.75rem;opacity:.75}
+.trust{display:flex;gap:16px;flex-wrap:wrap;margin-top:18px;color:#9fb4d8;font-size:.88rem}
+/* PHONE */
+.phone-wrap{display:flex;justify-content:center}
+.phone{width:270px;height:560px;background:#0a1526;border-radius:38px;border:3px solid #2b4265;box-shadow:0 30px 60px rgba(0,0,0,.5);overflow:hidden;position:relative}
+.phone .notch{position:absolute;top:10px;left:50%;transform:translateX(-50%);width:110px;height:22px;background:#0a1526;border-radius:12px;z-index:2}
+.screen{background:linear-gradient(180deg,#12345f,#0B1F3A);height:100%;padding:44px 14px 14px;color:#fff;display:flex;flex-direction:column}
+.screen .map{flex:1;background:#e8eef5;border-radius:16px;position:relative;overflow:hidden;margin-bottom:10px}
+.screen .map:before{content:"";position:absolute;inset:0;background:
+  linear-gradient(#c9d4e2 1px,transparent 1px),
+  linear-gradient(90deg,#c9d4e2 1px,transparent 1px);
+  background-size:22px 22px}
+.pin{position:absolute;font-size:26px;transform:translate(-50%,-100%)}
+.route{position:absolute;top:20%;right:18%;width:60%;height:45%;border:4px dashed var(--navy);border-radius:40px;transform:rotate(-8deg)}
+.farebar{background:#fff;color:var(--ink);border-radius:14px;padding:10px 12px;display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+.farebar b{color:var(--navy);font-size:1.2rem}
+.cta-mini{background:var(--gold);color:var(--navy);border-radius:12px;text-align:center;font-weight:900;padding:12px}
+/* SECTIONS */
+section{padding:64px 0}
+.sec-head{text-align:center;margin-bottom:34px}
+.sec-head .tag{color:var(--ok);font-weight:800}
+.sec-head h2{font-size:2rem;margin:6px 0}
+.sec-head p{color:var(--muted)}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+.card{background:var(--card);border-radius:18px;padding:26px;box-shadow:0 6px 20px rgba(16,35,63,.07);border:1px solid #e6ebf4}
+.card .ic{font-size:2.4rem}
+.card h3{margin:10px 0 6px}
+.card p{color:var(--muted);font-size:.95rem}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;counter-reset:st}
+.step{background:var(--navy);color:#fff;border-radius:18px;padding:26px 20px;position:relative;overflow:hidden}
+.step:after{content:counter(st);counter-increment:st;position:absolute;left:10px;top:-14px;font-size:5rem;font-weight:900;color:rgba(255,255,255,.07)}
+.step h3{color:var(--gold);margin-bottom:6px}
+/* DRIVER band */
+.driver-band{background:linear-gradient(135deg,#0d3a1a,#14532d);color:#fff;border-radius:24px;padding:44px 34px;display:grid;grid-template-columns:1.2fr .8fr;gap:24px;align-items:center}
+.driver-band h2{font-size:1.9rem;margin-bottom:8px}
+.driver-band ul{list-style:none;margin:14px 0}
+.driver-band li{margin:8px 0}
+.money{background:rgba(255,255,255,.12);border:1px dashed rgba(255,255,255,.4);border-radius:16px;padding:22px;text-align:center}
+.money b{font-size:2rem;color:#7CFFB2}
+/* FARES */
+.fares{background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 6px 20px rgba(16,35,63,.07)}
+.fares table{width:100%;border-collapse:collapse}
+.fares th{background:var(--navy);color:#fff;padding:14px}
+.fares td{padding:13px;text-align:center;border-bottom:1px solid #eef1f6}
+.fares tr:last-child td{border:none}
+/* FAQ */
+details{background:#fff;border:1px solid #e6ebf4;border-radius:14px;padding:16px 20px;margin-bottom:12px}
+summary{font-weight:800;cursor:pointer}
+details p{color:var(--muted);margin-top:8px}
+/* FOOTER */
+footer{background:var(--navy);color:#9fb4d8;padding:40px 0 24px;margin-top:20px}
+.foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:18px;max-width:1120px;margin:0 auto;padding:0 20px}
+.foot a{color:#cfe0ff}
+.copy{text-align:center;margin-top:22px;font-size:.85rem;color:#6d84a6}
+.chips{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:16px}
+.chip{background:#fff;border:1px solid #dbe3f0;padding:8px 18px;border-radius:999px;font-size:.9rem}
+@media(max-width:860px){.hero-in,.driver-band{grid-template-columns:1fr}.hero h1{font-size:2rem}.nav-links{display:none}}
 </style>
 </head>
 <body>
-<div class="hero">
-<div>
-<div class="eye">𓂀</div>
-<h1>حورس</h1>
-<div class="sub">نقل الفيوم الذكي — كاش • سهل • بدون تعقيد</div>
-<div>
-<span class="badge">📍 الفيوم • سنورس • إطسا • طامية • أبشواي</span>
-<span class="badge">💵 كاش فقط — بدون فيزات</span>
-<span class="badge">🔒 يعمل مباشرة على سيرفر الإنتاج</span>
-</div>
-<div class="btns">
-<a class="btn btn-gold" href="./rider/">🚕 افتح تطبيق الراكب</a>
-<a class="btn btn-gold" href="./driver/">🧑‍✈️ افتح تطبيق الكابتن</a>
-<a class="btn btn-out" href="./admin/">🖥️ لوحة التحكم</a>
-</div>
-<div class="btns">
-<a class="btn btn-out" href="https://github.com/br-horus/horus-fayoum/releases/download/v1.0-pilot/horus-rider.apk">⬇️ تحميل الراكب APK</a>
-<a class="btn btn-out" href="https://github.com/br-horus/horus-fayoum/releases/download/v1.0-pilot/horus-driver.apk">⬇️ تحميل الكابتن APK</a>
-</div>
-<div class="note">✅ <b>الإنتاج يعمل:</b> التطبيقات متصلة مباشرة بسيرفر حورس الإنتاجي المشفر — سجّل برقمك وابدأ فوراً.<br>ملفات APK الجديدة بإعدادات الإنتاج تُبنى تلقائياً — تابع <a href="https://github.com/br-horus/horus-fayoum/actions" style="color:#FFC107">صفحة البناء</a>.</div>
-</div>
-</div>
 
-<section>
-<h2>الأنظمة — كلها حية</h2>
-<div class="cards">
-<div class="card"><div class="i">🚕</div><h3>تطبيق الراكب</h3><p>خريطة الفيوم، اعرض سعرك، وتتبع الكابتن لحظياً.</p><a href="./rider/">افتح</a></div>
-<div class="card"><div class="i">🧑‍✈️</div><h3>تطبيق الكابتن</h3><p>أونلاين/أوفلاين، استقبال الطلبات، أرباح.</p><a href="./driver/">افتح</a></div>
-<div class="card"><div class="i">🖥️</div><h3>لوحة التحكم</h3><p>إحصائيات، إدارة الكباتن، توثيق، حظر.</p><a href="./admin/">افتح</a></div>
-<div class="card"><div class="i">🛠️</div><h3>الكود مفتوح</h3><p>الباك اند + التطبيقات على GitHub.</p><a href="https://github.com/br-horus/horus-fayoum">الكود</a></div>
-</div>
-</section>
+<nav><div class="nav-in">
+  <div class="brand"><span class="eye">𓂀</span> حورس</div>
+  <div class="nav-links">
+    <a href="#rider">للراكب</a><a href="#driver">للكابتن</a><a href="#fares">الأسعار</a><a href="#faq">أسئلة شائعة</a>
+  </div>
+  <a class="nav-cta" href="#download">حمّل التطبيق</a>
+</div></nav>
 
-<section>
-<h2>ازاي تبدأ؟</h2>
-<div class="steps">
-<div class="step"><h3>1️⃣ افتح التطبيق</h3><p>من المتصفح أو حمّل APK</p></div>
-<div class="step"><h3>2️⃣ سجّل برقمك</h3><p>كود تأكيد فوري</p></div>
-<div class="step"><h3>3️⃣ حدد وجهتك</h3><p>على خريطة الفيوم</p></div>
-<div class="step"><h3>4️⃣ ادفع كاش 💵</h3><p>للكابتن في نهاية الرحلة</p></div>
-</div>
-</section>
+<header class="hero"><div class="hero-in">
+  <div>
+    <span class="kicker">🚕 محافظة الفيوم — سنورس • إطسا • طامية • أبشواي</span>
+    <h1>مشوارك في الفيوم… <span class="gold">بضغطة واحدة</span></h1>
+    <p class="lead">حورس يوصلك بأقرب كابتن موثوق، بسعر عادل تتفق عليه، وتدفع كاش. بدون فيزا، بدون تعقيد، وبالعربي.</p>
+    <div class="dl-row" id="download">
+      <a class="btn btn-gold" href="/downloads/horus-rider.apk">⬇️ تحميل الراكب <small>APK • ‏18MB</small></a>
+      <a class="btn btn-gold" href="/downloads/horus-driver.apk">🧑‍✈️ تحميل الكابتن <small>APK • ‏18MB</small></a>
+    </div>
+    <div class="dl-row">
+      <a class="btn btn-line" href="/rider/">🌐 جرّب الراكب في المتصفح</a>
+      <a class="btn btn-line" href="/driver/">🌐 جرّب الكابتن في المتصفح</a>
+      <a class="btn btn-line" href="/admin/">🖥️ لوحة التحكم</a>
+    </div>
+    <div class="trust"><span>💵 كاش فقط</span><span>🗣️ عربي بالكامل</span><span>🛡️ كباتن موثقة</span><span>🆓 مجاني ومفتوح المصدر</span></div>
+  </div>
+  <div class="phone-wrap"><div class="phone"><div class="notch"></div>
+    <div class="screen">
+      <div style="text-align:center;margin-bottom:8px">𓂀 <b>حورس</b> — رايح فين؟</div>
+      <div class="map"><div class="route"></div><div class="pin" style="top:30%;right:30%">📍</div><div class="pin" style="bottom:18%;left:26%">🚕</div></div>
+      <div class="farebar"><span>ميدان السواقي ← الجامعة</span><b>30 ج</b></div>
+      <div class="cta-mini">اطلب الكابتن الآن 🚕</div>
+    </div>
+  </div></div>
+</div></header>
 
-<section>
-<h2>أسعار استرشادية (الفيوم)</h2>
-<div class="fares">
-<table>
-<tr><th>المشوار</th><th>السعر التقريبي</th></tr>
-<tr><td>داخل مدينة الفيوم</td><td>20 – 35 جنيه</td></tr>
-<tr><td>الفيوم ↔ سنورس</td><td>40 – 60 جنيه</td></tr>
-<tr><td>الفيوم ↔ إطسا / طامية</td><td>50 – 80 جنيه</td></tr>
-<tr><td>فتح العداد + الكيلو</td><td>15 فتح + 5/كم</td></tr>
-</table>
-<p style="margin-top:10px;color:#8aa0c6">السعر النهائي بالاتفاق مع الكابتن.</p>
-</div>
-</section>
+<section id="rider"><div class="wrap">
+  <div class="sec-head"><div class="tag">🧍 للراكب</div><h2>اطلب مشوارك في 3 خطوات</h2><p>مصمم ليكون سهلاً على الجميع — حتى أول مرة تستخدم تطبيقات</p></div>
+  <div class="grid3">
+    <div class="card"><div class="ic">📍</div><h3>حدد وجهتك</h3><p>اكتب اسم المكان بالعربي — سنورس، الجامعة، ميدان السواقي — والخريطة تجيبه لك.</p></div>
+    <div class="card"><div class="ic">🤝</div><h3>اعرض سعرك</h3><p>شوف السعر الاسترشادي واعرض سعرك، والكباتن القريبين يقبلوا.</p></div>
+    <div class="card"><div class="ic">💵</div><h3>اركب وادفع كاش</h3><p>تتبع الكابتن لحد ما يوصلك، وادفع الفلوس في إيدك. خلاص.</p></div>
+  </div>
+</div></section>
 
-<footer>𓂀 حورس — نقل الفيوم الذكي • مجاني ومفتوح المصدر • إنتاج 2026</footer>
+<section id="driver" style="background:#fff"><div class="wrap">
+  <div class="driver-band">
+    <div>
+      <h2>🧑‍✈️ معاك عربية؟ اكسب من حورس</h2>
+      <p>سجّل ككابتن واستقبل طلبات الركاب القريبين منك. بدون عمولات خفية في البايلوت.</p>
+      <ul><li>✅ تسجيل برقم الموبايل + صورة البطاقة والرخصة</li><li>✅ زر أونلاين/أوفلاين — اشتغل وقت ما تحب</li><li>✅ شوف الأجرة قبل ما تقبل + أرباحك اليومية</li></ul>
+      <a class="btn btn-gold" href="/downloads/horus-driver.apk">⬇️ حمّل تطبيق الكابتن</a>
+    </div>
+    <div class="money"><div>متوسط مشوار داخل الفيوم</div><b>20 – 35 ج</b><div>كاش في إيدك فوراً</div></div>
+  </div>
+</div></section>
+
+<section id="fares"><div class="wrap">
+  <div class="sec-head"><div class="tag">💰</div><h2>أسعار استرشادية في الفيوم</h2><p>السعر النهائي بالاتفاق مع الكابتن قبل التحرك</p></div>
+  <div class="fares"><table>
+    <tr><th>المشوار</th><th>السعر التقريبي</th></tr>
+    <tr><td>داخل مدينة الفيوم</td><td><b>20 – 35 جنيه</b></td></tr>
+    <tr><td>الفيوم ↔ سنورس</td><td><b>40 – 60 جنيه</b></td></tr>
+    <tr><td>الفيوم ↔ إطسا / طامية</td><td><b>50 – 80 جنيه</b></td></tr>
+    <tr><td>فتح العداد + الكيلو</td><td><b>15 فتح + 5/كم</b></td></tr>
+  </table></div>
+  <div class="chips"><span class="chip">📍 الفيوم</span><span class="chip">📍 سنورس</span><span class="chip">📍 إطسا</span><span class="chip">📍 طامية</span><span class="chip">📍 أبشواي</span></div>
+</div></section>
+
+<section id="faq"><div class="wrap" style="max-width:760px">
+  <div class="sec-head"><h2>أسئلة شائعة</h2></div>
+  <details><summary>محتاج فيزا أو حساب بنكي؟</summary><p>لا خالص. حورس كاش فقط — تدفع للكابتن في إيدك نهاية الرحلة.</p></details>
+  <details><summary>التطبيق مش لاقي كباتن قريبين، أعمل إيه؟</summary><p>اتأكد إن الـ GPS شغال وإنك داخل نطاق التغطية (الفيوم ومراكزها). في البايلوت عدد الكباتن بيزيد تدريجياً.</p></details>
+  <details><summary>إزاي أبقى كابتن؟</summary><p>حمّل تطبيق الكابتن، سجّل برقمك، ارفع صورة البطاقة والرخصة ورقم العربية، والإدارة توثقك وتفعّلك.</p></details>
+  <details><summary>الـ APK بيطلب "تثبيت من مصادر غير معروفة" — ده آمان؟</summary><p>أيوه طبيعي لأن التطبيق لسه مش على متجر Play. دوس "تثبيت على أي حال" — الملف من سيرفرنا الرسمي ومفحوص.</p></details>
+  <details><summary>الآيفون إمتى؟</summary><p>نسخة الويب شغالة على آيفون من المتصفح دلوقتي، وتطبيق iOS في الخطة بعد البايلوت.</p></details>
+</div></section>
+
+<footer><div class="foot">
+  <div><div class="brand"><span class="eye">𓂀</span> حورس</div><div>نقل الفيوم الذكي — مجاني ومفتوح المصدر</div></div>
+  <div><a href="/rider/">تطبيق الراكب</a> • <a href="/driver/">تطبيق الكابتن</a> • <a href="/admin/">لوحة التحكم</a><br><a href="https://github.com/br-horus/horus-fayoum">الكود على GitHub</a></div>
+</div><div class="copy">𓂀 حورس — صُنع في مصر • بايلوت الفيوم 2026</div></footer>
 </body>
 </html>
