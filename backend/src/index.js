@@ -40,6 +40,10 @@ CREATE TABLE IF NOT EXISTS drivers (id TEXT PRIMARY KEY, name TEXT, phone TEXT U
 CREATE TABLE IF NOT EXISTS trips (id TEXT PRIMARY KEY, userId TEXT, driverId TEXT, pickupLat REAL, pickupLng REAL, pickupAddr TEXT, dropLat REAL, dropLng REAL, dropAddr TEXT, fare REAL, bid REAL, status TEXT DEFAULT 'waiting', createdAt INTEGER, endedAt INTEGER);
 CREATE TABLE IF NOT EXISTS otps (phone TEXT PRIMARY KEY, code TEXT, expires INTEGER, attempts INTEGER DEFAULT 0);
 `);
+// ترحيل قواعد قديمة (IF NOT EXISTS لا يحدّث الجداول الموجودة)
+for (const sql of ['ALTER TABLE otps ADD COLUMN attempts INTEGER DEFAULT 0']) {
+  try { db.exec(sql); } catch { /* العمود موجود مسبقاً */ }
+}
 
 // ===== أدوات =====
 const uid = () => crypto.randomUUID().replace(/-/g, '').slice(0, 12);
