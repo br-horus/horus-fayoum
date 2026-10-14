@@ -2,6 +2,7 @@
 // أونلاين/أوفلاين + استقبال طلبات + قبول/وصول/بدء/إنهاء + أرباح - كله محلي مجاني
 import 'dart:async';
 import 'dart:convert';
+import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:geolocator/geolocator.dart';
@@ -59,7 +60,11 @@ class _SplashState extends State<Splash> {
     _go();
   }
   Future<void> _go() async {
-    await Permission.locationWhenInUse.request();
+    if (!kIsWeb) {
+      try {
+        await Permission.locationWhenInUse.request();
+      } catch (_) {}
+    }
     await Future.delayed(const Duration(seconds: 2));
     final p = await SharedPreferences.getInstance();
     if (!mounted) return;
