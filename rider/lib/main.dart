@@ -92,7 +92,7 @@ class _SplashState extends State<Splash> {
       backgroundColor: horusNavy,
       body: Center(
         child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-          Text('𓂀', style: TextStyle(fontSize: 100)),
+          const Icon(Icons.remove_red_eye, color: horusGold, size: 92),
           SizedBox(height: 8),
           Text('حورس',
               style: TextStyle(
@@ -161,7 +161,7 @@ class _PhoneState extends State<Phone> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('𓂀 دخول حورس'), backgroundColor: horusNavy, foregroundColor: Colors.white),
+      appBar: AppBar(title: const Text('دخول حورس'), backgroundColor: horusNavy, foregroundColor: Colors.white),
       body: ListView(padding: const EdgeInsets.all(20), children: [
         const Text('أهلاً بيك في حورس 👋',
             style: TextStyle(fontSize: 24, fontWeight: FontWeight.w900)),
@@ -293,7 +293,7 @@ class _OtpState extends State<Otp> {
                       borderRadius: BorderRadius.circular(14))),
               child: busy
                   ? const CircularProgressIndicator(color: Colors.white)
-                  : const Text('ادخل حورس 𓂀',
+                      : const Text('ادخل حورس',
                       style:
                           TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
             ),
@@ -486,7 +486,7 @@ class _HomeState extends State<Home> {
                 ]),
             child: Column(children: [
               const Row(children: [
-                Text('𓂀', style: TextStyle(fontSize: 28)),
+                Icon(Icons.remove_red_eye, color: horusNavy, size: 28),
                 SizedBox(width: 8),
                 Text('رايح فين في الفيوم؟',
                     style:
@@ -802,8 +802,8 @@ class Me extends StatelessWidget {
                 child: CircleAvatar(
                     radius: 44,
                     backgroundColor: horusNavy,
-                    child: Text('𓂀',
-                        style: TextStyle(fontSize: 40)))),
+                    child: Icon(Icons.remove_red_eye,
+                        color: Colors.white, size: 40))),
             const SizedBox(height: 12),
             Center(
                 child: Text(p?.getString('horus_name') ?? 'راكب حورس',
@@ -832,7 +832,7 @@ class Me extends StatelessWidget {
             ),
             const SizedBox(height: 20),
             const Center(
-                child: Text('𓂀 حورس — نقل الفيوم الذكي',
+                child: Text('حورس — نقل الفيوم الذكي',
                     style: TextStyle(color: Colors.black45))),
           ]);
         },
